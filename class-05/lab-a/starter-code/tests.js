@@ -23,6 +23,7 @@ function testSumAndMultiply() { //eslint-disable-line
     console.log('%c TEST FOR sumAndMultiply() PASSES', 'color: green');
   } else {
     console.log('%c TEST FOR sumAndMultiply() FAILS', 'color: red');
+    
   }
 }
 
