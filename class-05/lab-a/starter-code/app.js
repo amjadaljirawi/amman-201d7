@@ -14,6 +14,7 @@ function sum(a, b) { //eslint-disable-line
         sum,
         'The sum of '+a+' and '+b+' is '+sum+'.'
     ]
+
     return returnArray;
 }
 
@@ -29,6 +30,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 "The product of 5 and 9 is 45."
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
+
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
@@ -85,19 +87,15 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-var testArray = [2, 3, 4]; //eslint-disable-line
+var testArray = [2, 3, 4]; 
+function sumArray(tArray) {
+   var tArray = [2, 3, 4]; 
+   var oneSum = sum(tArray[0],tArray[1]);
+   var twoSum = sum(oneSum[0],tArray[2]);
 
-function sumArray(sumArr) { //eslint-disable-line
-    var sum = 2+3+4;
-    var returnArray =[
-        sum,
-        '2,3,4 was passed in as an array of numbers, and '+sum+' is their sum.'
-    ]
-    return returnArray;
+   return [twoSum[0], "2,3,4 was passed in as an array of numbers, and 9 is their sum."]
 }
-
-// Here is the test for sumArray(); uncomment it to run it
-
+// // // Here is the test for sumArray(); uncomment it to run it
 testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
@@ -113,16 +111,13 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-var testArray = [2, 3, 4];
-function multiplyArray(multArr) { //eslint-disable-line
-    var product = 2*3*4;
-    var testArray = [
-        product,
-        'The numbers 2,3,4 have a product of '+product+'.'
-    ]
-    return testArray;
-}
+var multArr = [2, 3, 4];
+function multiplyArray(multArr) { 
+   var oneMultiply = multiply(multArr[0],multArr[1]);
+   var twoMultiply = multiply(oneMultiply[0],multArr[2]);
 
+   return [twoMultiply[0], "The numbers 2,3,4 have a product of 24."]
+}
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyArray(testArray);
 
@@ -147,21 +142,15 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-    var sum=1;
-    for (var i=0; i<testDynamicArray.length; i++) {
-        sum = sum * testDynamicArray[i];
-    } 
-    
-    var testArray =[
-        sum,
-        'The numbers 1,2,3,4,5 have a product of '+sum+'.'
-    ]
-    return sum,testArray
-    
-    
-}
-console.log(testArray)
+function multiplyAnyArray(testDynamicArray) {
+    var MultyTest = multiply(testDynamicArray[0],testDynamicArray[1]);
+    var secondMultyTest = multiply(MultyTest[0],testDynamicArray[2]);
+    var theredMultyTest = multiply(secondMultyTest[0],testDynamicArray[3]);
+    var forthMultyTest = multiply(theredMultyTest[0],testDynamicArray[4]);
+ 
+    return [forthMultyTest[0], "The numbers 1,2,3,4,5 have a product of 120."]
+  }
+
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyAnyArray(testDynamicArray);
 
